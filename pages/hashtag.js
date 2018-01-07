@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Button,Menu,Container,Grid,Rail,Segment,Message,Image } from 'semantic-ui-react';
 // import 'semantic-ui-css/semantic.min.css';
-export default class App extends React.Component{
+export default class Hashtag extends React.Component{
     constructor(props) {
       super(props);
       this.state = {
@@ -23,12 +23,12 @@ export default class App extends React.Component{
                     </Container>
                     <Menu>
                         <Menu.Item name = 'Rwot' active={activeItem === 'home'}>
-                            <Link href={{ pathname: '/hashtag', query: { name: 'Rwot' } }}>
+                            <Link prefetch href="/my/login">
                               #Rwot
                             </Link>
                         </Menu.Item>
                         <Menu.Item name = 'Rwot'>
-                            <Link prefetch href="#">
+                            <Link prefetch href="/my/login">
                               #ThousandHills
                             </Link>
                         </Menu.Item>
@@ -62,7 +62,7 @@ export default class App extends React.Component{
         );
     }
 }
-App.getInitialProps = async function() {
+Hashtag.getInitialProps = async function() {
   const res = await fetch('http://localhost:8081/hashtag/rwot')
   const tweets = await res.json()
 
