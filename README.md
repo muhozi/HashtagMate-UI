@@ -22,7 +22,7 @@ npm run dev
 
 ### Set up the backend
 
-Follow the details of how to try the Hashtagmate @ https://github.com/JeanAbayo/HashtagMate
+Follow the details of how to set up api backend @ https://github.com/JeanAbayo/HashtagMate
 
 
 
@@ -30,5 +30,11 @@ Access in the browser http://localhost:3000
 
 
 
-E
+\#HashtagMate (*From weekend hackathon serie*)  - **Kigali** ♥ Codes
+
+
+
+## Authors
+
+[Muhozi Emery](https://github.com/muhozi) & [Jean Abayo](https://github.com/JeanAbayo)
 
