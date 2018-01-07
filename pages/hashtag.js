@@ -2,6 +2,7 @@ import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
+import uuid from 'uuid/v4';
 import { Button,Menu,Container,Grid,Rail,Segment,Message,Image } from 'semantic-ui-react';
 // import 'semantic-ui-css/semantic.min.css';
 export default class Hashtag extends React.Component{
@@ -35,26 +36,19 @@ export default class Hashtag extends React.Component{
                     </Menu>
                     <Container>
                         <Grid columns={3}>
-                            
-                              
-                              
-                                {this.props.tweets.map((tweet)=>{
-                                    return(
-                                        <Grid.Column>
-                                            <Grid.Row style={{textAlign:'left',border:'1px solid #eee',borderRadius:'5px'}}>
-                                                <div style={{backgroundColor:'#'+tweet.user.profile_background_color,color:'#'+tweet.user.profile_link_color,borderRadius:'5px 5px 0px 0px',padding:'5px',paddingBottom:'15px'}}>
-                                                    <Image floated="left" circular src={tweet.user.profile_image_url}/>
-                                                    <b>{tweet.user.name}<br/>@{tweet.user.name}</b>
-                                                </div>
-                                                <p style={{padding:'10px'}}>{tweet.text}</p>
-                                            </Grid.Row>
-                                        </Grid.Column>
-                                    )
-                                })}
-
-                                
-                              
-                            
+                            {this.props.tweets.map((tweet)=>{
+                                return(
+                                    <Grid.Column key={uuid()}>
+                                        <Grid.Row style={{textAlign:'left',border:'1px solid #eee',borderRadius:'5px'}}>
+                                            <div style={{backgroundColor:'#'+tweet.user.profile_background_color,color:'#'+tweet.user.profile_link_color,borderRadius:'5px 5px 0px 0px',padding:'5px',paddingBottom:'15px'}}>
+                                                <Image floated="left" circular src={tweet.user.profile_image_url}/>
+                                                <b>{tweet.user.name}<br/>@{tweet.user.screen_name}</b>
+                                            </div>
+                                            <p style={{padding:'10px'}}>{tweet.text}</p>
+                                        </Grid.Row>
+                                    </Grid.Column>
+                                )
+                            })}
                         </Grid>
                     </Container>
                 </div>
